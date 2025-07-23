@@ -7,6 +7,7 @@ import Home from "./components/pages/Home";
 import Services from "./components/pages/Services";
 import Products from "./components/pages/Products";
 import Destinations from "./components/pages/Destinations";
+import SignUp from "./components/pages/SignUp";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/services" exact component={Services} />
           <Route path="/products" exact component={Products} />
           <Route path="/destinations" exact component={Destinations} />
+          <Route path="/sign-up" exact component={SignUp} />
         </Routes>
         <Footer />
       </Router>
