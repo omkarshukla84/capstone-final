@@ -18,12 +18,12 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" exact component={Services} />
-          <Route path="/products" exact component={Products} />
-          <Route path="/destinations" exact component={Destinations} />
-          <Route path="/sign-up" exact component={SignUp} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/products/:id" component={ProductDetail} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/destinations" element={<Destinations />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
         </Routes>
         <Footer />
       </Router>

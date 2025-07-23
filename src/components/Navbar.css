@@ -1,158 +1,500 @@
 .navbar {
-    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  max-width: 1500px;
+}
+
+.navbar-logo {
+  color: #fff;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.fa-typo3 {
+  margin-left: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 20px;
+  list-style: none;
+  text-align: center;
+  width: 60vw;
+  justify-content: end;
+  margin-right: 2rem;
+  align-items: center;
+}
+
+.nav-item {
+  height: 80px;
+}
+
+.nav-links {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+}
+
+.nav-links:hover {
+  border-bottom: 4px solid #fff;
+  transition: all 0.2s ease-out;
+}
+
+.fa-bars {
+  color: #fff;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Clerk Authentication Styling */
+.nav-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.nav-auth-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.nav-auth-btn:hover {
+  background: #fff;
+  color: #242424;
+  transform: translateY(-2px);
+}
+
+.sign-in-btn {
+  border-color: #fff;
+}
+
+.sign-in-btn:hover {
+  background: #fff;
+  color: #242424;
+}
+
+.user-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 10px;
+}
+
+/* Override Clerk's default styles */
+.user-button-wrapper .cl-userButton-root {
+  height: 40px;
+  width: 40px;
+}
+
+.user-button-wrapper .cl-userButton-trigger {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+  background: transparent !important;
+}
+
+.user-button-wrapper .cl-userButton-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-color: #f0f0f0;
+}
+
+/* Clerk Modal Styling */
+.cl-modalContent {
+  background: #1a1a1a !important;
+  border: 1px solid #333 !important;
+}
+
+.cl-card {
+  background: #1a1a1a !important;
+  border: 1px solid #333 !important;
+}
+
+.cl-headerTitle {
+  color: #fff !important;
+}
+
+.cl-headerSubtitle {
+  color: #ccc !important;
+}
+
+.cl-socialButtonsBlockButton {
+  border: 1px solid #333 !important;
+  background: #2a2a2a !important;
+  color: #fff !important;
+}
+
+.cl-socialButtonsBlockButton:hover {
+  background: #3a3a3a !important;
+}
+
+.cl-socialButtonsBlockButtonText {
+  color: #fff !important;
+}
+
+.cl-dividerLine {
+  background: #333 !important;
+}
+
+.cl-dividerText {
+  color: #ccc !important;
+}
+
+.cl-formFieldLabel {
+  color: #fff !important;
+}
+
+.cl-formFieldInput {
+  background: #2a2a2a !important;
+  border: 1px solid #333 !important;
+  color: #fff !important;
+}
+
+.cl-formFieldInput:focus {
+  border-color: #fff !important;
+  box-shadow: 0 0 0 1px #fff !important;
+}
+
+.cl-formFieldInput::placeholder {
+  color: #999 !important;
+}
+
+.cl-formButtonPrimary {
+  background: linear-gradient(
+    90deg,
+    rgb(28, 27, 27) 0%,
+    rgb(26, 23, 23) 100%
+  ) !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background: linear-gradient(
+    90deg,
+    rgb(38, 37, 37) 0%,
+    rgb(36, 33, 33) 100%
+  ) !important;
+}
+
+.cl-footerActionText {
+  color: #ccc !important;
+}
+
+.cl-footerActionLink {
+  color: #fff !important;
+}
+
+.cl-footerActionLink:hover {
+  color: #f0f0f0 !important;
+}
+
+.cl-identityPreviewText {
+  color: #fff !important;
+}
+
+.cl-identityPreviewEditButton {
+  color: #fff !important;
+}
+
+.cl-formFieldErrorText {
+  color: #ff6b6b !important;
+}
+
+.cl-alertText {
+  color: #fff !important;
+}
+
+.cl-formFieldSuccessText {
+  color: #51cf66 !important;
+}
+
+/* Additional text elements */
+.cl-internal-b3fm6y {
+  color: #fff !important;
+}
+
+.cl-internal-1osab4a {
+  color: #ccc !important;
+}
+
+/* Override any remaining dark text */
+.cl-modalContent * {
+  color: #fff !important;
+}
+
+.cl-card * {
+  color: #fff !important;
+}
+
+/* Specific overrides for buttons and links */
+.cl-modalContent button {
+  color: #fff !important;
+}
+
+.cl-modalContent a {
+  color: #fff !important;
+}
+
+.cl-modalContent input {
+  color: #fff !important;
+}
+
+/* Footer text */
+.cl-modalContent .cl-footer {
+  color: #ccc !important;
+}
+
+.cl-modalContent .cl-footer * {
+  color: #ccc !important;
+}
+
+@media screen and (max-width: 960px) {
+  .NavbarItems {
+    position: relative;
   }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    max-width: 1500px;
-  }
-  
-  .navbar-logo {
-    color: #fff;
-    justify-self: start;
-    margin-left: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  .fa-typo3 {
-    margin-left: 0.5rem;
-    font-size: 1.8rem;
-  }
-  
+
   .nav-menu {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-gap: 20px;
-    list-style: none;
-    text-align: center;
-    width: 60vw;
-    justify-content: end;
-    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
   }
-  
-  .nav-item {
-    height: 80px;
+
+  .nav-menu.active {
+    background: #242222;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
   }
-  
+
   .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links:hover {
+    background-color: #fff;
+    color: #242424;
+    border-radius: 0;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
     color: #fff;
+    font-size: 2rem;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: #fff;
+    padding: 14px 20px;
+    border: 1px solid #fff;
+    transition: all 0.3s ease-out;
+  }
+
+  .nav-links-mobile:hover {
+    background: #fff;
+    color: #242424;
+    transition: 250ms;
+  }
+
+  /* Mobile Clerk Authentication Styling */
+  .nav-auth {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    height: 100%;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
   }
-  
-  .nav-links:hover {
-    border-bottom: 4px solid #fff;
-    transition: all 0.2s ease-out;
-  }
-  
-  .fa-bars {
+
+  .nav-auth-btn {
+    background: transparent;
+    border: 2px solid #fff;
     color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
   }
-  
-  .nav-links-mobile {
-    display: none;
+
+  .nav-auth-btn:hover {
+    background: #fff;
+    color: #242424;
   }
-  
-  .menu-icon {
-    display: none;
+
+  .user-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
   }
-  
-  @media screen and (max-width: 960px) {
-    .NavbarItems {
-      position: relative;
-    }
-  
-    .nav-menu {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 90vh;
-      position: absolute;
-      top: 80px;
-      left: -100%;
-      opacity: 1;
-      transition: all 0.5s ease;
-    }
-  
-    .nav-menu.active {
-      background: #242222;
-      left: 0;
-      opacity: 1;
-      transition: all 0.5s ease;
-      z-index: 1;
-    }
-  
-    .nav-links {
-      text-align: center;
-      padding: 2rem;
-      width: 100%;
-      display: table;
-    }
-  
-    .nav-links:hover {
-      background-color: #fff;
-      color: #242424;
-      border-radius: 0;
-    }
-  
-    .navbar-logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(25%, 50%);
-    }
-  
-    .menu-icon {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-100%, 60%);
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-  
-    .fa-times {
-      color: #fff;
-      font-size: 2rem;
-    }
-  
-    .nav-links-mobile {
-      display: block;
-      text-align: center;
-      margin: 2rem auto;
-      border-radius: 4px;
-      width: 80%;
-      text-decoration: none;
-      font-size: 1.5rem;
-      background-color: transparent;
-      color: #fff;
-      padding: 14px 20px;
-      border: 1px solid #fff;
-      transition: all 0.3s ease-out;
-    }
-  
-    .nav-links-mobile:hover {
-      background: #fff;
-      color: #242424;
-      transition: 250ms;
-    }
+
+  .user-button-wrapper .cl-userButton-trigger {
+    height: 50px;
+    width: 50px;
+    border: 3px solid #fff;
   }
+}
+
+/* Global Clerk Dark Theme Overrides */
+.cl-rootBox {
+  color: #fff !important;
+}
+
+.cl-modalBackdrop {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Ensure all Clerk text is white */
+[data-clerk-theme] {
+  --cl-color-text-primary: #ffffff !important;
+  --cl-color-text-secondary: #cccccc !important;
+  --cl-color-background-primary: #1a1a1a !important;
+  --cl-color-background-secondary: #2a2a2a !important;
+  --cl-color-border-primary: #333333 !important;
+  --cl-color-border-secondary: #444444 !important;
+}
+
+/* Force white text on all Clerk elements */
+.cl-internal-b3fm6y,
+.cl-internal-1osab4a,
+.cl-internal-1mxqlm7,
+.cl-internal-wkkub8,
+.cl-internal-1h4pbgy,
+.cl-internal-1jdi2l7 {
+  color: #ffffff !important;
+}
+
+/* Clerk component specific overrides */
+.cl-signIn-root,
+.cl-signUp-root {
+  --cl-color-text-primary: #ffffff !important;
+  --cl-color-text-secondary: #cccccc !important;
+}
+
+/* Make sure Google button text is visible */
+.cl-socialButtonsBlockButton .cl-socialButtonsBlockButtonText {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+/* Email input and other form elements */
+.cl-formField .cl-formFieldInput {
+  background: #2a2a2a !important;
+  border: 1px solid #444 !important;
+  color: #ffffff !important;
+}
+
+.cl-formField .cl-formFieldInput:focus {
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Continue button styling */
+.cl-formButtonPrimary {
+  background: linear-gradient(90deg, #1c1b1b 0%, #1a1717 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 600 !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background: linear-gradient(90deg, #2c2b2b 0%, #2a2727 100%) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Footer links */
+.cl-footer .cl-footerActionLink {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+.cl-footer .cl-footerActionLink:hover {
+  color: #f0f0f0 !important;
+}

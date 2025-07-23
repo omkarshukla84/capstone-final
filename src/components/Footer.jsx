@@ -58,10 +58,10 @@ function Footer() {
         <div className="social-media-wrap">
           <div className="footer-logo">
             <Link to="/" className="social-logo">
-              TSPOT <i className="fab fa-typo3"></i>
+              Travello <i className="fab fa-typo3"></i>
             </Link>
           </div>
-          <small className="website-rights">TSPOT &copy; 2022</small>
+          <small className="website-rights">Travello &copy; 2022</small>
           <div className="social-icons">
             <Link
               className="social-icon-link facebook"

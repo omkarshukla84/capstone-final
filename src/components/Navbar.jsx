@@ -1,12 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "./Button";
 import "./Navbar.css";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 function Navbar() {
   // states
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
   // following function will handle toggling the click state variable value.
   const handleHamburgerClick = () => {
     return setClick(!click); // toggle menu
@@ -14,27 +18,13 @@ function Navbar() {
   const closeMobileMenu = () => {
     return setClick(false); // close menu
   };
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
-  useEffect(() => {
-    showButton();
-    window.addEventListener("resize", showButton);
-
-    // Cleanup event listener on component unmount
-    return () => window.removeEventListener("resize", showButton);
-  }, []);
 
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            TSPOT <i className="fab fa-typo3"></i>
+            TRAVELLO <i className="fab fa-typo3"></i>
           </Link>
           <div className="menu-icon">
             <i
@@ -75,17 +65,28 @@ function Navbar() {
                 All Destinations
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/sign-up"
-                className="nav-links-mobile"
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
+            <li className="nav-item nav-auth">
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <button className="nav-auth-btn sign-in-btn">Sign In</button>
+                </SignInButton>
+              </SignedOut>
+              <SignedIn>
+                <div className="user-button-wrapper">
+                  <UserButton
+                    appearance={{
+                      elements: {
+                        avatarBox: "w-8 h-8",
+                        userButtonPopoverCard: "shadow-lg",
+                        userButtonPopoverActionButton:
+                          "text-gray-700 hover:text-gray-900",
+                      },
+                    }}
+                  />
+                </div>
+              </SignedIn>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
         </div>
       </nav>
     </>

@@ -40,11 +40,14 @@ function Services() {
 
   // following useState is for loader
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       if (document.readyState === "complete") {
         setOpen(false);
       }
     }, 100);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -101,7 +104,7 @@ function Services() {
                             className="slider-caption"
                           >
                             <h1>{service.name}</h1>
-                            <p>{service.Setting}</p>
+                            <p>{service.setting}</p>
                           </div>
                         </ImageSlider>
                         {/* <img className="serviceImage img-fluid" src={`${imagePath}${service.images[0].src}`} alt={`${service.images[0].title}${service.images[0].description}`} /> */}
@@ -125,7 +128,7 @@ function Services() {
                         <Col xs="12">
                           <div className="service-data-setting">
                             <p>Setting: </p>
-                            <p>{service.Setting}</p>
+                            <p>{service.setting}</p>
                           </div>
                         </Col>
                         <Col xs="12">
