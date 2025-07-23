@@ -9,6 +9,7 @@ import Products from "./components/pages/Products";
 import Destinations from "./components/pages/Destinations";
 import SignUp from "./components/pages/SignUp";
 import Login from "./components/pages/Login";
+import ProductDetail from "./components/pages/ProductDetail";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/destinations" exact component={Destinations} />
           <Route path="/sign-up" exact component={SignUp} />
           <Route path="/login" exact component={Login} />
+          <Route path="/products/:id" component={ProductDetail} />
         </Routes>
         <Footer />
       </Router>
