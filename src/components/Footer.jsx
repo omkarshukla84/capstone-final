@@ -61,7 +61,7 @@ function Footer() {
               Travello <i className="fab fa-typo3"></i>
             </Link>
           </div>
-          <small className="website-rights">Travello &copy; 2022</small>
+          <small className="website-rights">Travello &copy; 2025</small>
           <div className="social-icons">
             <Link
               className="social-icon-link facebook"
